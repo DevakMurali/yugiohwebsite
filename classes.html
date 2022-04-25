@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Behind Yu-Gi-Oh! &#8212; Yu-Gi-Oh! v0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to Play Yu-Gi-Oh!" href="howtoplay.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Yu-Gi-Oh!</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="howtoplay.html">How to Play Yu-Gi-Oh!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Behind Yu-Gi-Oh!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-player-class">The Player Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-card-class">The Card Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-generic-card-class">The Generic Card Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-monster-card-class">The Monster Card Class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-game-controller-class">The Game Controller Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-yu-gi-oh-session-class">The Yu-Gi-Oh! Session Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="howtoplay.html" title="previous chapter">How to Play Yu-Gi-Oh!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="code-behind-yu-gi-oh">
+<h1>Code Behind Yu-Gi-Oh!<a class="headerlink" href="#code-behind-yu-gi-oh" title="Permalink to this headline">¶</a></h1>
+<p>Let’s explore the classes, methods, and functions that are responsible for Yu-Gi-Oh!’s functionality.</p>
+<div class="section" id="the-player-class">
+<h2>The Player Class<a class="headerlink" href="#the-player-class" title="Permalink to this headline">¶</a></h2>
+<p>This class handles all activity relating to the player. This includes drawing cards, summoning monsters, sending monsters to the graveyard, and other various getters/setters.</p>
+<blockquote>
+<div><dl class="py class">
+<dt id="src.player.Player">
+<em class="property">class </em><code class="sig-prename descclassname">src.player.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lifepoints</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="src.player.Player.decrease_life_points">
+<code class="sig-name descname">decrease_life_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">life_points</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player.decrease_life_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrease player’s life points by a certain amount</p>
+<dl class="simple">
+<dt>Params:</dt><dd><p>life_points:int The number of points to decrease life points by</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.draw_card">
+<code class="sig-name descname">draw_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player.draw_card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a card from the top of the player’s deck and add it to the player’s hand</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.get_deck_size">
+<code class="sig-name descname">get_deck_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#src.player.Player.get_deck_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the number of cards in the player’s deck</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: number of cards in the player’s deck</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.get_graveyard_size">
+<code class="sig-name descname">get_graveyard_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#src.player.Player.get_graveyard_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the number of cards in the player’s graveyard</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: number of cards in the player’s graveyard</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.get_hand_size">
+<code class="sig-name descname">get_hand_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#src.player.Player.get_hand_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter for the number of cards in hand</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: number of cards in player’s hand</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.send_card_to_graveyard">
+<code class="sig-name descname">send_card_to_graveyard</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field_index</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">hand_index</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player.send_card_to_graveyard" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Get card from either hand or field and send it to the graveyard. A -1 index means that no card from the</dt><dd><p>hand/field should be sent to the graveyard</p>
+</dd>
+<dt>Params:</dt><dd><p>hand_index:int The card in the player’s hand to be sent to the graveyard
+field_index:int The location of the card on the field to be sent to the graveyard</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.summon_monster">
+<code class="sig-name descname">summon_monster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hand_index</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">field_index</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player.summon_monster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a card from the player’s hand and adds it to the field at a specific location
+Params:</p>
+<blockquote>
+<div><p>hand_index:int The card in the player’s hand to be summoned
+field_index:int The location on the field to place the card</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.player.Player.tribute_summon">
+<code class="sig-name descname">tribute_summon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hand_index</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">field_index</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.player.Player.tribute_summon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a card from the player’s hand and adds it to the field at a specific location</p>
+<p>DEV NOTE: We will wait to implement this after determining the best logic to execute a tribute summon
+Params:</p>
+<blockquote>
+<div><p>hand_index:int The card in the player’s hand to be summoned
+field_index:int The location on the field to place the card</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="the-card-class">
+<h2>The Card Class<a class="headerlink" href="#the-card-class" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of card classes related to this version of Yu-Gi-Oh!. The first class is a parent class for a generic card. The second of the two is a more specific Monster Card.</p>
+<div class="section" id="the-generic-card-class">
+<h3>The Generic Card Class<a class="headerlink" href="#the-generic-card-class" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="py class">
+<dt id="src.card.Card">
+<em class="property">class </em><code class="sig-prename descclassname">src.card.</code><code class="sig-name descname">Card</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">card_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.card.Card" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing a Yu-Gi-Oh! Card.</p>
+<dl class="py method">
+<dt id="src.card.Card.display_card">
+<code class="sig-name descname">display_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.card.Card.display_card" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Gets the information for the current card.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>display_info:</dt><dd><p>Dictionary containing the instance variables of the Card class.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="the-monster-card-class">
+<h3>The Monster Card Class<a class="headerlink" href="#the-monster-card-class" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="py class">
+<dt id="src.card.Monster">
+<em class="property">class </em><code class="sig-prename descclassname">src.card.</code><code class="sig-name descname">Monster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">monster_type</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">attack_points</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">defense_points</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.card.Monster" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing a Yu-Gi-Oh! Monster Card.</p>
+<p>Note: This class only supports Normal monsters in the current build.</p>
+<dl class="py method">
+<dt id="src.card.Monster.display_card">
+<code class="sig-name descname">display_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.card.Monster.display_card" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Gets the information for the current monster card.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>display_info:</dt><dd><p>a dict containing the instance variables for the monster card.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="the-game-controller-class">
+<h2>The Game Controller Class<a class="headerlink" href="#the-game-controller-class" title="Permalink to this headline">¶</a></h2>
+<p>This class deals with controlling the actual functionality of the Yu-Gi-Oh! game. This controller is involved with determining the first player, changing turns, having monsters attack, determining a winner, etc.</p>
+<blockquote>
+<div><dl class="py class">
+<dt id="src.game.GameController">
+<em class="property">class </em><code class="sig-prename descclassname">src.game.</code><code class="sig-name descname">GameController</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session_id</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="src.game.GameController.attack_monster">
+<code class="sig-name descname">attack_monster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attacking_monster</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">attacked_monster</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController.attack_monster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conducts an attack from attacking_monster onto attacked_monster
+:param attacking_monster: field_idx of monster that is attacking
+:param attacked_monster: field_idx of monster that is being attacked</p>
+<p>Note: Currently attacking only supports dealing with monster in attack position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.game.GameController.change_turn">
+<code class="sig-name descname">change_turn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController.change_turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes player turn</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.game.GameController.determine_first_player">
+<code class="sig-name descname">determine_first_player</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController.determine_first_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets starting turn order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.game.GameController.is_there_winner">
+<code class="sig-name descname">is_there_winner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController.is_there_winner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if either player has won. A player has won if their opponent’s life_points have reached 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.game.GameController.summon_monster">
+<code class="sig-name descname">summon_monster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hand_idx</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.game.GameController.summon_monster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summons monster from  current_players’s hand onto current_player’s field
+:param hand_idx: index in current_player’s hand of monster to summon</p>
+<p>Note: Currently summoning only supports summoning monsters in attack position.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="the-yu-gi-oh-session-class">
+<h2>The Yu-Gi-Oh! Session Class<a class="headerlink" href="#the-yu-gi-oh-session-class" title="Permalink to this headline">¶</a></h2>
+<p>This class is in charge of creating, storing, presenting, and updating a Yu-Gi-Oh! game session.</p>
+<blockquote>
+<div><dl class="py class">
+<dt id="src.yugioh.Yugioh">
+<em class="property">class </em><code class="sig-prename descclassname">src.yugioh.</code><code class="sig-name descname">Yugioh</code><a class="headerlink" href="#src.yugioh.Yugioh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yugioh is the yugioh_game interface in which the yugioh yugioh_game can be played by CRUD.</p>
+<dl class="py method">
+<dt id="src.yugioh.Yugioh.create_game">
+<code class="sig-name descname">create_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.yugioh.Yugioh.create_game" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> – dictionary containing  key-value pairs. session_id: session id associated with the</p>
+</dd>
+</dl>
+<p>yugioh_game session.
+‘player_name’: name of the player
+‘deck’ a list of strings of card names to create the deck with
+:return: dict version of Game</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.yugioh.Yugioh.delete_game">
+<code class="sig-name descname">delete_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.yugioh.Yugioh.delete_game" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>request: dictionary containing a single key-value pair. The key is “session_id”. The value is a
+integer unique to all ongoing yugioh_game sessions.</p>
+</dd>
+<dt>Returns:</dt><dd><p>reply: dictionary containing a single key-value pair. The key is “session_id”. The value is a
+integer unique to all ongoing yugioh_game sessions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.yugioh.Yugioh.read_game">
+<code class="sig-name descname">read_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.yugioh.Yugioh.read_game" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>request: dictionary containing single key-value pair. The key is “session_id”. The value is a
+integer unique to all ongoing yugioh_game sessions.</p>
+</dd>
+<dt>Returns:</dt><dd><p>reply: dictionary containing a several key-value pairs that fully describe the yugioh_game’s state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.yugioh.Yugioh.update_game">
+<code class="sig-name descname">update_game</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#src.yugioh.Yugioh.update_game" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>request: dictionary describing the “move” to be made in the yugioh_game keys:
+:arg: “session_id”: value assosiated with a yugioh game session
+“player”: player to make the move as. 1 for player 1 or 2 for player 2
+“move”: Move to take in the yugioh game. Values can be , “summon_monster”, “change_turn”, “attack”,
+“tribute_summon”.
+“args”: a list of arguments needed to make the move</p>
+</dd>
+<dt>Returns:</dt><dd><p>reply: dictionary describing the yugioh_game’s new state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2022, Devak Murali.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/classes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play Yu-Gi-Oh! &#8212; Yu-Gi-Oh! v0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code Behind Yu-Gi-Oh!" href="classes.html" />
+    <link rel="prev" title="Welcome to Yu-Gi-Oh! in Python" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Yu-Gi-Oh!</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Play Yu-Gi-Oh!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#game-setup">Game Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#draw-phase">Draw Phase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-phase">Main Phase</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regular-summoning">Regular Summoning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tribute-summoning">Tribute Summoning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#battle-phase">Battle Phase</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#attack-monster-vs-attack-monster">Attack Monster vs. Attack Monster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attack-monster-vs-defense-monster">Attack Monster vs. Defense Monster</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Code Behind Yu-Gi-Oh!</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Yu-Gi-Oh! in Python</a></li>
+      <li>Next: <a href="classes.html" title="next chapter">Code Behind Yu-Gi-Oh!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-play-yu-gi-oh">
+<h1>How to Play Yu-Gi-Oh!<a class="headerlink" href="#how-to-play-yu-gi-oh" title="Permalink to this headline">¶</a></h1>
+<p>This version of Yu-Gi-Oh! is significantly simplified compared to traditional Yu-Gi-Oh!, but may continue to become more advanced as development of the game continues. As of now: the following is how the game is played:</p>
+<div class="section" id="game-setup">
+<h2>Game Setup<a class="headerlink" href="#game-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Yu-Gi-Oh! is designed to be a 1v1, player vs. player game</p></li>
+<li><p>Before the game begins, one of the players is selected to go first</p></li>
+<li><p>Each player begin the game with 8000 life points</p></li>
+<li><p>The goal of the game is to reduce the opposing player’s life points to/below zero</p></li>
+<li><p>The game begins with both players drawing five cards to their hand, and the first player begins</p></li>
+</ol>
+<p>Each player’s turn is composed of <strong>three</strong> different phases:
+1. Draw Phase
+2. Main Phase
+3. Battle Phase</p>
+</div>
+<div class="section" id="draw-phase">
+<h2>Draw Phase<a class="headerlink" href="#draw-phase" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>During the draw phase, the player can draw one card from their deck and add it to their hand</p></li>
+</ol>
+</div>
+<div class="section" id="main-phase">
+<h2>Main Phase<a class="headerlink" href="#main-phase" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>During the player’s main phase, the player can summon one monster from his/her hand, and place it onto the board</p></li>
+<li><p>The monster can be summoned in either ‘Attack’ or ‘Defense’ position</p></li>
+<li><p>Only one monster can be summoned in the main phase</p></li>
+<li><p>Only a max of five monsters are allowed on the player’s side of the board</p></li>
+</ol>
+<div class="section" id="regular-summoning">
+<h3>Regular Summoning<a class="headerlink" href="#regular-summoning" title="Permalink to this headline">¶</a></h3>
+<p>Regular summoning simply allows the player to take a card from their hand and place it on the field.</p>
+</div>
+<div class="section" id="tribute-summoning">
+<h3>Tribute Summoning<a class="headerlink" href="#tribute-summoning" title="Permalink to this headline">¶</a></h3>
+<p>Tribute summoning is usually required for higher level monsters. This type of summoning requires the player to send a from either his/her hand or the field to the graveyard in order to summon the selected monster.</p>
+</div>
+</div>
+<div class="section" id="battle-phase">
+<h2>Battle Phase<a class="headerlink" href="#battle-phase" title="Permalink to this headline">¶</a></h2>
+<p>The player the enters the battle phase, where the player is allowed to have each monster in attack position attack a monster on the opponents field.</p>
+<ul class="simple">
+<li><p>Only monsters in attack position can attack</p></li>
+<li><p>If the opposing player has no monster’s on the field, then the monster can attack the player directly, making the opposing player lose life points equal to the number of the attack monster’s attack points.</p></li>
+<li><p>Each monster can only attack once, but can attack any other monster</p></li>
+</ul>
+<div class="section" id="attack-monster-vs-attack-monster">
+<h3>Attack Monster vs. Attack Monster<a class="headerlink" href="#attack-monster-vs-attack-monster" title="Permalink to this headline">¶</a></h3>
+<p>When attacking an opponent’s monster that is also in attack position, the weaker monster gets sent to the graveyard andthe difference in attack strength is subtracted from the life points of the owner of the weaker monster</p>
+</div>
+<div class="section" id="attack-monster-vs-defense-monster">
+<h3>Attack Monster vs. Defense Monster<a class="headerlink" href="#attack-monster-vs-defense-monster" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When attacking an opponent’s monster that is in defense position, the defensive monster is destroyed only if the attacking monster has more attack points than the defending monster’s defense points</p></li>
+<li><p>If attacking a defensive monster with defense points greater than the attacking monster’s attack points, the owner of the attacking monster loses life points equivalent to the difference in attack and defense points.</p></li>
+<li><p>After these three phases, the player’s turn is over and the opposing player gets to go. This process continues until one of the players has no life points left, or a players runs out of cards in the deck.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2022, Devak Murali.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/howtoplay.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
