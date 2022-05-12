@@ -1,80 +1,33 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Yu-Gi-Oh! in Python &#8212; Yu-Gi-Oh! v0.0.1 documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Yu-Gi-Oh! in Python &#8212; yugioh v0.0.2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="How to Play Yu-Gi-Oh!" href="howtoplay.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-  <div class="document">
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">Yu-Gi-Oh!</a></h1>
+  
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="howtoplay.html">How to Play Yu-Gi-Oh!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes.html">Code Behind Yu-Gi-Oh!</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="howtoplay.html" title="next chapter">How to Play Yu-Gi-Oh!</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
+    <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <a class="reference internal image-reference" href="_images/logo.jpg"><img alt="Yu-Gi-Oh!" src="_images/logo.jpg" style="width: 800px;" /></a>
@@ -88,63 +41,72 @@
 </div>
 <div class="section" id="project-background">
 <h2>Project Background<a class="headerlink" href="#project-background" title="Permalink to this headline">¶</a></h2>
-<p>We decided to re-create Yu-Gi-Oh! for our CMSC435: Software Engineering class here at the University of Maryland. This project is focused on implementing a simplified version of the Yu-Gi-Oh! card game, primarily through Python. To support he development and functionality of the game, we wll also will be implementing the game with the help of HTML, CSS, JavaScript, and SQL.</p>
+<p>We decided to re-create Yu-Gi-Oh! for our CMSC435: Software Engineering class here at the University of Maryland. This project is focused on implementing a simplified version of the Yu-Gi-Oh! card game, primarily through Python. The way that this game will work will be through a CLI.</p>
 <p>The Yu-Gi-Oh! card game has come quite intricate over the course of the show and the numerous spin offs. For the purposes of our project, we will be using the original rule set from the Yu-Gi-Oh! game and will only be using monster cards for the game. Perhaps as the development continues, it is possible that we will continue expanding the bounds of our Yu-Gi-Oh! game.</p>
-</div>
-<div class="section" id="how-to-use-our-software">
-<h2>How to Use Our Software<a class="headerlink" href="#how-to-use-our-software" title="Permalink to this headline">¶</a></h2>
-<p>As the development stands right now, there will be a primary way for users to use this software and a secondary, less developed way. The primary way to play the game will be through a web-portal UI where users can create an account, log in, and battle with other players.</p>
-<p>The secondary method would be through a command-line interface, however this method will only be used for preliminary stages of development.</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="howtoplay.html">How to Play Yu-Gi-Oh!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="howtoplay.html#game-setup">Game Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="howtoplay.html#draw-phase">Draw Phase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="howtoplay.html#main-phase">Main Phase</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="howtoplay.html#regular-summoning">Regular Summoning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="howtoplay.html#tribute-summoning">Tribute Summoning</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="howtoplay.html#battle-phase">Battle Phase</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="howtoplay.html#attack-monster-vs-attack-monster">Attack Monster vs. Attack Monster</a></li>
-<li class="toctree-l3"><a class="reference internal" href="howtoplay.html#attack-monster-vs-defense-monster">Attack Monster vs. Defense Monster</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classes.html">Code Behind Yu-Gi-Oh!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#the-player-class">The Player Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#the-card-class">The Card Class</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#the-generic-card-class">The Generic Card Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#the-monster-card-class">The Monster Card Class</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#the-game-controller-class">The Game Controller Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#the-yu-gi-oh-session-class">The Yu-Gi-Oh! Session Class</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
-</ul>
 </div>
 </div>
 </div>
 
 
           </div>
-          
         </div>
       </div>
-    <div class="clearer"></div>
-  </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">yugioh</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howtoplay.html">How to Play Yu-Gi-Oh!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtorunsoftware.html">How to Run our Yu-Gi-Oh! Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Code Behind Yu-Gi-Oh! Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html#code-behind-yu-gi-oh-server">Code Behind Yu-Gi-Oh! Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html#code-behind-yu-gi-oh-cli">Code Behind Yu-Gi-Oh! CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html#code-behind-yu-gi-oh-database">Code Behind Yu-Gi-Oh! Database</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="howtoplay.html" title="next chapter">How to Play Yu-Gi-Oh!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
     <div class="footer">
       &copy;2022, Devak Murali.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
-      <a href="_sources/index.rst.txt"
+      <a href="_sources/contents.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
