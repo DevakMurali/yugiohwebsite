@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>How to Run our Yu-Gi-Oh! Software &#8212; yugioh v0.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code Behind Yu-Gi-Oh!" href="classes.html" />
+    <link rel="prev" title="How to Play Yu-Gi-Oh!" href="howtoplay.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-run-our-yu-gi-oh-software">
+<h1>How to Run our Yu-Gi-Oh! Software<a class="headerlink" href="#how-to-run-our-yu-gi-oh-software" title="Permalink to this headline">¶</a></h1>
+<p>Our software is run through a linux CLI, so ideally make sure you have a command line like Ubuntu or Git Bash installed. You will also need docker installed in order to run both the client and the server. Since this game is multiplayer, once person will have to start up a server that you can play on.</p>
+<div class="section" id="how-to-start-the-server">
+<h2>How to Start the Server<a class="headerlink" href="#how-to-start-the-server" title="Permalink to this headline">¶</a></h2>
+<p>First make sure that you have all the contents of the Yu-Gi-Oh! game downloaded from the GitLab page. From there, make sure that your CLI in the yugioh directory. Then run the following commands:</p>
+<p>First, to build a docker image run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">--tag</span> <span class="pre">yugioh-server</span> <span class="pre">-f</span> <span class="pre">Dockerfile.server</span> <span class="pre">.</span></code></p>
+<p>Then, to start up the server run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">5555:5555</span> <span class="pre">-it</span> <span class="pre">yugioh-server</span></code></p>
+<p>Keep in mind that this command line instance will now be dedicated to running the server, so you may have to open another instance in order to run the client.</p>
+</div>
+<div class="section" id="how-to-run-the-client">
+<h2>How to Run the Client<a class="headerlink" href="#how-to-run-the-client" title="Permalink to this headline">¶</a></h2>
+<p>First make sure that you have all the contents of the Yu-Gi-Oh! game downloaded from the GitLab page. From there, make sure that your CLI in the yugioh directory. Then run the following commands:</p>
+<p>First, to build a docker image run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">--tag</span> <span class="pre">yugioh-client</span> <span class="pre">-f</span> <span class="pre">Dockerfile.client</span> <span class="pre">.</span></code></p>
+<p>Then, to start up the client:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">yugioh-client</span></code></p>
+</div>
+<div class="section" id="how-to-run-tests">
+<h2>How to Run Tests<a class="headerlink" href="#how-to-run-tests" title="Permalink to this headline">¶</a></h2>
+<p>If you would like to run some of the tests, just type in the following string of commands into a new command line:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">virtualenv</span></code>
+<code class="docutils literal notranslate"><span class="pre">virtualenv</span> <span class="pre">venv</span></code>
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code>
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pytest-cov</span></code>
+<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=src</span> <span class="pre">tests/</span></code></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="contents.html">yugioh</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="howtoplay.html">How to Play Yu-Gi-Oh!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Run our Yu-Gi-Oh! Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-start-the-server">How to Start the Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run-the-client">How to Run the Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-run-tests">How to Run Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Code Behind Yu-Gi-Oh!</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://cmsc435.garrettvanhoy.com/hai265/yugioh">GitLab</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="howtoplay.html" title="previous chapter">How to Play Yu-Gi-Oh!</a></li>
+      <li>Next: <a href="classes.html" title="next chapter">Code Behind Yu-Gi-Oh!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Devak Murali.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/howtorunsoftware.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
